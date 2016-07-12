@@ -1,3 +1,28 @@
+/*
+4. When you join the Benevolent Order of Programmers, you can be known at BOP
+meetings by your real name, your job title, or your secret BOP name.Write a program
+that can list members by real name, by job title, by secret name, or by a member’s
+preference. Base the program on the following structure:
+
+// Benevolent Order of Programmers name structure
+struct bop {
+char fullname[strsize]; // real name
+char title[strsize]; // job title
+char bopname[strsize]; // secret BOP name
+int preference; // 0 = fullname, 1 = title, 2 = bopname
+};
+
+In the program, create a small array of such structures and initialize it to suitable
+values. Have the program run a loop that lets the user select from different alternatives:
+a. display by name b. display by title
+c. display by bopname d. display by preference
+q. quit
+
+Note that “display by preference” does not mean display the preference member; it
+means display the member corresponding to the preference number. For instance, if
+preference is 1, choice d would display the programmer’s job title.
+*/
+
 #include <iostream>
 
 using namespace std;
