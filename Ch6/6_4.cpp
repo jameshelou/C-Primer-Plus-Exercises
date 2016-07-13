@@ -40,9 +40,9 @@ int main() {
     char choice;
     
     bop* bop_p = new bop[3];
-    bop_p[0] = {"James Helou", "CEO", "ICECRUISER", 1};
+    bop_p[0] = {"Jimmy Smith", "CEO", "YOLOSWAGGIN", 1};
     bop_p[1] = {"Nathan Brown", "Doctor", "NATEB", 2};
-    bop_p[2] = {"Knowelle Carter", "Singer", "BEYONCE", 3};
+    bop_p[2] = {"Larry Smith", "Singer", "WHOKNOWS", 3};
     
     cout << "BOP Programmers List\n"
     << "a. display by name\t b. display by title\n"
@@ -70,7 +70,7 @@ int main() {
             case 'd':
                 cout << "Enter pref number (1-3): \n";
                 (cin >> bop_p->pref).get();
-                cout << bop_p[bop_p->pref].fullname << " you selected.\n";
+                cout << bop_p[bop_p->pref-1].fullname << " you selected.\n";
                 break;
             default:
                 cout << "You did not pick a valid choice.\n";
