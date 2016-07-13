@@ -20,8 +20,10 @@ using namespace std;
 int main() {
 	double tax = 0.0, tvarps;
 
+    cout << "Enter an amount of tvarps for tax calculation: " << endl;
 	while (cin >> tvarps) {
 		if (tvarps <= 5000) {
+            tax = 0;
 			cout << "Total Tax: " << tax << " tvarps." << endl;
 		}
 		else if (tvarps <= 15000) {
