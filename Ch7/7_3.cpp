@@ -1,40 +1,52 @@
+/*
+3. Here is a structure declaration:
+
+struct box
+{
+char maker[40];
+float height;
+float width;
+float length;
+float volume;
+};
+
+a. Write a function that passes a box structure by value and that displays the
+value of each member.
+
+b. Write a function that passes the address of a box structure and that sets the
+volume member to the product of the other three dimensions.
+
+c. Write a simple program that uses these two functions.
+*/
+
 #include <iostream>
 
 using namespace std;
 
-void fillArray(int* arr, int size);
-void displayArray(const int*, int size);
-double avgCalc(const int*, int size);
+struct box {
+	char maker[40];
+	float height;
+	float width;
+	float volume;
+};
+
+void displayStruct(const box* b);
+void calcBoxVolume(box* b);
 
 int main() {
-    int arr1[10];
-    fillArray(arr1, 10);
-    displayArray(arr1, 10);
-    double average = avgCalc(arr1, 10);
-    cout << "Final average: " << average << endl;
-    cout << "FIN" << endl;
+	box testbox = { "TestBox", 5.5, 10.25, 30.0 };
+	displayStruct(&testbox);
+	calcBoxVolume(&testbox);
+	cout << endl << endl;
+	displayStruct(&testbox);
+	return 0;
 }
 
-void fillArray(int* arr, int size) {
-    int i = 0;
-    cout << "Enter score #" << i+1 << ": " << endl;
-    while (cin >> arr[i] && i < size-1) {
-        cout << "Enter score #" << i+1 << ": " << endl;
-        ++i;
-    }
+void displayStruct(const box* b) {
+	cout << "Box Maker: " << b->maker << "\nHeight: " << b->height
+		<< "\nWidth: " << b->width << "\nVolume: " << b->volume << endl;
 }
 
-void displayArray(const int* arr, int size) {
-    for (int i = 0; i < size; ++i) {
-        cout << "#" << i+1 << ": " << arr[i] << endl;
-    }
-}
-
-double avgCalc(const int* arr, int size) {
-    int sum = 0;
-    for (int i = 0; i < size; ++i) {
-        sum += arr[i];
-    }
-    
-    return sum / double(size);
+void calcBoxVolume(box* b) {
+	b->volume = b->height * b->width * b->height;
 }
